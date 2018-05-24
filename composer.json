@@ -6,6 +6,11 @@
         "illuminate/database": "^5.6",
         "illuminate/pagination": "5.6"
     },
+    "autoload": {
+        "psr-4": {
+            "Frankli\\Itearoa": ""
+        }
+    },
     "authors": [
         {
             "name": "Frank Li",
