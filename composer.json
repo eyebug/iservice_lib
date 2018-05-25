@@ -3,8 +3,8 @@
     "description": "libs for iService of itearoa Ltd.",
     "type": "library",
     "require": {
-        "illuminate/database": "^5.6",
-        "illuminate/pagination": "5.6"
+        "illuminate/database": "^5.5",
+        "illuminate/pagination": "^5.5"
     },
     "autoload": {
         "psr-4": {
