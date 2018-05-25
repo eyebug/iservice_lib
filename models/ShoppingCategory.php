@@ -14,6 +14,9 @@ class ShoppingCategory extends Model
 {
 
     protected $table = 'hotel_shopping_tag';
+
+    protected $guarded = [];
+
     public $timestamps = false;
 
     public function children()
