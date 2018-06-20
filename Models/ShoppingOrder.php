@@ -36,30 +36,6 @@ class ShoppingOrder extends Model
     }
 
 
-    /**
-     * Update the order status when all products have the same status
-     *
-     * @param array $orderIdArray
-     */
-    public static function syncOrder(array $orderIdArray)
-    {
-        $orders = self::with('user', 'products')->whereIn('id', $orderIdArray)->get();
-        foreach ($orders as $order) {
-            $flag = true;
-            $status = $order->products[0]->pivot->status;
-            foreach ($order->products as $product) {
-                if ($status != $product->pivot->status) {
-                    $flag = false;
-                    break;
-                }
-            }
-            if ($flag) {
-                $order->status = $status;
-                $order->save();
-            }
-        }
-    }
-
     public static function addProducts(array $data)
     {
         $result = DB::table('orders_products')->insert($data);
