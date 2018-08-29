@@ -15,6 +15,8 @@ class User extends Model
 
     protected $guarded = [];
 
+    protected $hidden = ['pin_code'];
+
     public $timestamps = false;
 
 
